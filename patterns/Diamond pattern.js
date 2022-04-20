@@ -1,24 +1,34 @@
-let num=4
-function toprintdiamond(n){
-for(let i=0;i<n;i++){
-    for(let j=0;j<n-i-1;j++){
-        process.stdout.write(' ')
+
+function diamond(n) {
+    console.log('Print a diamond with rows', n);
+  
+    let space = n - 1;
+    let pattern = '';
+  
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < space; j++)
+        pattern += ' ';
+  
+      for (let j = 0; j <= i; j++)
+        pattern += '* ';
+  
+      pattern += '\n';
+      space--;
     }
-    for(let j=0;j<=i;j++){
-        process.stdout.write('* ')
+  
+    space = 0;
+  
+    for (let i = n; i > 0; i--) {
+      for (let j = 0; j < space; j++)
+        pattern += ' ';
+  
+      for (let j = 0; j < i; j++)
+        pattern += '* ';
+  
+      pattern += '\n';
+    space++;
+    
     }
-    console.log();
+    console.log(pattern);
 }
-for(let i=0;i<n;i++){
-    for(let j=1;j<=i;j++){
-        process.stdout.write(' ')
-    }
-    for(let j=0;j<n-i;j++){
-        process.stdout.write('* ')
-    }
-    console.log();
-}
-}
-//<input type="number" id="num1"/>
-//var num=document.getElementById("num1");
-toprintdiamond(num)
+diamond(5);
