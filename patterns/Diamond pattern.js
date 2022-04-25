@@ -1,5 +1,5 @@
 
-function diamond(n) {
+ export default function diamond(n) {
     console.log('Print a diamond with rows', n);
   
     let space = n - 1;
@@ -31,4 +31,4 @@ function diamond(n) {
     }
     console.log(pattern);
 }
-diamond(5);
+
