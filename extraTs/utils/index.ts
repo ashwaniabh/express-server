@@ -1,2 +1,2 @@
-export { default as hasPermission } from './permissions.js';
-export { default as validateUsers } from './validation.js';
+export { default as hasPermission } from './permissions';
+export { default as validateUsers } from './validation';

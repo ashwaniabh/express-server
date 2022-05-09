@@ -1,4 +1,3 @@
-
 export const GET_USERS = 'getUsers';
 export const HEAD_TRAINER = 'head-trainer';
 export const TRAINEE = 'trainee';

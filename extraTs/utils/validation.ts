@@ -1,4 +1,4 @@
-import { validation } from "./helper.js";
+import { validation } from "./helper";
 import {User,str}from "../interfaces";
 
 
