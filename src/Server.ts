@@ -1,5 +1,7 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
+import Database from "./lib/Database";
+
 
 import { errorHandeler, notFoundRoute } from "./lib/routes";
 import router from "./router";
@@ -29,11 +31,17 @@ export default class Server {
         this.app.use(notFoundRoute);
     };
     public run() {
+
+        // const database = new (Database)
+        const url = process.env.MONGO_URL
         const { port, env } = this.config;
-        this.app.listen(port, () => {
-            console.log("server is running on port", port);
+        Database.open(url).then(() => {
+            this.app.listen(port, () => {
+                console.log("server is running on port", port);
+            });
+        }).catch((error) => {
+            console.log(error);
         });
-        return this;
     };
     private initBodyParser() {
         const { app } = this;
